@@ -3,8 +3,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 import { LoginService } from '../login/login.service'
 
-let password = new FormControl('', Validators.required);
-let Confirmpassword = new FormControl('', CustomValidators.equalTo(password));
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,6 +10,9 @@ let Confirmpassword = new FormControl('', CustomValidators.equalTo(password));
   providers: [LoginService]
 })
 export class RegisterComponent implements OnInit {
+
+  password = new FormControl('', Validators.required);
+
 
   @ViewChild('registration') registration: FormGroup;
 
@@ -28,8 +29,6 @@ export class RegisterComponent implements OnInit {
       resName: new FormControl(null, Validators.required),
       name: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      password: password,
-      Confirmpassword: Confirmpassword
     })
   }
   registrationForm() {

@@ -23,7 +23,7 @@
               <span style="color:red" *ngIf="registration.controls['email'].hasError('email') && registration.controls['resName'].touched">
                 Enter Valid Email
               </span>
-              <input placeholder="Enter Password" type="password" formControlName="password" class="form-control" name="password" id="password"
+              <!-- <input placeholder="Enter Password" type="password" formControlName="password" class="form-control" name="password" id="password"
                 required>
               <span style="color:red" *ngIf="registration.controls['password'].hasError('required') && registration.controls['resName'].touched">
               </span>
@@ -31,7 +31,7 @@
                 id="Confirmpassword">
               <span style="color:red" *ngIf="registration.controls['Confirmpassword'].hasError('required') && registration.controls['Confirmpassword'].touched"></span>
               <span style="color: red" *ngIf="registration.controls['Confirmpassword'].hasError(equalTo) && registration.controls['Confirmpassword'].touched">
-              </span>
+              </span> -->
               <button class="btn btn-info" type="submit"> Register</button>
             </div>
           </form>

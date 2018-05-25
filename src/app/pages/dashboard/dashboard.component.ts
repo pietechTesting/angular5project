@@ -8,16 +8,16 @@ import { CurdService } from '../../services/curd.service'
   providers: [CurdService]
 })
 export class DashboardComponent implements OnInit {
-  private countData: any = {
+  public countData: any = {
     restaurantOrderCount: null,
     categoryCount: null,
     productCount: null,
     userCount: null
   }
-  private LocationData: any = {
+  public LocationData: any = {
     locationName: '',
   }
-  private data: any;
+  public data: any;
   constructor(private crudService: CurdService) { }
 
   ngOnInit() {
