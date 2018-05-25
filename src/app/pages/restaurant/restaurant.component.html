@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-md-offset-10">
+      <button class="btn btn-danger">
+        <strong>+</strong> &nbsp; Add</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <table>
+
+        <tr>
+          <th>Title</th>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>Activate/Deactivate</th>
+          <th>View</th>
+        </tr>
+        <tr *ngFor="let restaurant of detail">
+          <td>{{restaurant.restaurantName}}</td>
+          <td>{{restaurant.name}}</td>
+          <td>{{restaurant.contactNumber}}</td>
+          <td>
+            <ui-switch [(ngModel)]="restaurant.status" (change)="updateRestaurantStatus($event,restaurant)"></ui-switch>
+          </td>
+          <td>
+            <button class="btn btn-success" (click)="viewRestaurant(restaurant._id)">
+              <em class="fa fa-search"></em>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

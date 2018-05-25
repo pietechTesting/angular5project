@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-header tex-center">
+            <strong>Registration</strong>
+          </div>
+          <form [formGroup]="registration" (ngSubmit)="registrationForm()">
+            <div class="formGroup">
+              <input placeholder="Enter Restaurant Name" formControlName="resName" class="form-control" name="resName" id="resName" required>
+              <span style="color:red" *ngIf="registration.controls['resName'].hasError('required') && registration.controls['resName'].touched">
+                Please Enter Restaurant Name
+              </span>
+              <input placeholder="Enter Name" formControlName="name" class="form-control" name="name" id="name" required>
+              <span style="color:red" *ngIf="registration.controls['name'].hasError('required') && registration.controls['name'].touched">
+                Please Enter Name
+              </span>
+              <input placeholder="Enter Email" formControlName="email" class="form-control" name="email" id="email" type="email" required>
+              <span style="color:red" *ngIf="registration.controls['email'].hasError('required') && registration.controls['resName'].touched">
+                Please Enter Email
+              </span>
+              <span style="color:red" *ngIf="registration.controls['email'].hasError('email') && registration.controls['resName'].touched">
+                Enter Valid Email
+              </span>
+              <input placeholder="Enter Password" type="password" formControlName="password" class="form-control" name="password" id="password"
+                required>
+              <span style="color:red" *ngIf="registration.controls['password'].hasError('required') && registration.controls['resName'].touched">
+              </span>
+              <input placeholder="Confirm Password" type="password" formControlName="Confirmpassword" class="form-control" name="Confirmpassword"
+                id="Confirmpassword">
+              <span style="color:red" *ngIf="registration.controls['Confirmpassword'].hasError('required') && registration.controls['Confirmpassword'].touched"></span>
+              <span style="color: red" *ngIf="registration.controls['Confirmpassword'].hasError(equalTo) && registration.controls['Confirmpassword'].touched">
+              </span>
+              <button class="btn btn-info" type="submit"> Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
